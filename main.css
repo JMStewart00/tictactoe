@@ -1,0 +1,18 @@
+
+body {
+	background-color: #333;
+	color: white;
+}
+
+#notification {
+	display: none;
+}
+
+canvas#ttt {
+	margin: auto;
+    display: block;
+}
+
+#message {
+	text-align: center;
+}
