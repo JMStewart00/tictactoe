@@ -1,4 +1,4 @@
-var canvas = document.getElementById('ttt'),
+let canvas = document.getElementById('ttt'),
     ctx = canvas.getContext('2d'),
     msg = document.getElementById('message'),
     cellSize = 100,
@@ -12,38 +12,9 @@ var canvas = document.getElementById('ttt'),
         0b100100100, 0b010010010, 0b001001001, // Columns
         0b100010001, 0b001010100, // Diagonals
     ],
-    BLANK = 0, X = 1, O = -1
-    mouse = {
-        x: -1,
-        y: -1
-    };
+    BLANK = 0, X = 1, O = -1;
 
 canvas.width = canvas.height = 3 * cellSize;
-
-canvas.addEventListener('mouseout', function () {
-    mouse.x = mouse.y = -1;
-});
-
-canvas.addEventListener('mousemove', function (e) {
-    let x = e.pageX - canvas.offsetLeft,
-        y = e.pageY - canvas.offsetTop;
-
-        mouse.x = x;
-        mouse.y = y;
-
-        console.log(getCellByCoords(x, y));
-});
-
-canvas.addEventListener('click', function (e) {
-    let x = e.pageX - canvas.offsetLeft,
-        y = e.pageY - canvas.offsetTop;
-
-        mouse.x = x;
-        mouse.y = y;
-
-
-});
-
 
 function draw () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -120,9 +91,6 @@ function getCellCoords (cell) {
     };
 }
 
-function getCellByCoords (x, y) {
-    return (Math.floor(x / cellSize) % 3) + Math.floor(y / cellSize) * 3;
-}
-
-
 draw();
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
